@@ -6,13 +6,12 @@ package activity.com.jfmr.akacrud.pojo;
 
 public class DateTimePOJO {
 
-
+    public static final String HYPHEN = "-";
     public static final String SEPARATOR = "T";
     public static final String DUMMYZERO = "0";
     public static final String DOTS = ":";
     private String s_date;
     private String s_time;
-    private static String s_formattedDate;
     private int i_year;
     private int i_month;
     private int i_day;
@@ -38,8 +37,8 @@ public class DateTimePOJO {
      */
     public static String formatDate(DateTimePOJO dateTimePOJO){
 
-        s_formattedDate = dateTimePOJO.getS_date().concat(SEPARATOR).concat(dateTimePOJO.getS_time());
-        return s_formattedDate;
+
+        return dateTimePOJO.getS_date().concat(SEPARATOR).concat(dateTimePOJO.getS_time());
 
     }
     /**
@@ -61,6 +60,16 @@ public class DateTimePOJO {
         return (number <10 ?String.valueOf(DUMMYZERO.concat(String.valueOf(number))): String.valueOf(number));
 
     }
+
+    /**
+     * @param string
+     * @return
+     */
+    public static String insertLeftZero(String string) {
+        return (Integer.parseInt(string) < 10 ? String.valueOf(DUMMYZERO.concat(String.valueOf(string))) : String.valueOf(string));
+
+    }
+
 
     public String getS_date() {
         return s_date;
@@ -125,11 +134,6 @@ public class DateTimePOJO {
         this.i_seconds = i_seconds;
     }
 
-    public void setS_formattedDate(String s_formattedDate) {
-        this.s_formattedDate = s_formattedDate;
-    }
-    public String getS_formattedDate() {
-        return s_formattedDate;
-    }
+
 
 }

@@ -2,10 +2,10 @@ package activity.com.jfmr.akacrud.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -28,7 +28,7 @@ public class ListActivity extends AppCompatActivity {
     private LinearLayoutManager mLinearLayoutManager;
     private UserModelRecyclerViewAdapter mAdapter;
     private ArrayList<UserPOJO> arrUserModel;
-
+    private SearchView searchView;
 
     public ListActivity() {
     }
@@ -50,7 +50,8 @@ public class ListActivity extends AppCompatActivity {
         mAdapter = new UserModelRecyclerViewAdapter(this, arrUserModel);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
-
+        searchView = (SearchView) findViewById(R.id.idSearchView);
+        search(searchView);
 
         try {
 
@@ -58,7 +59,7 @@ public class ListActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-            ((AppCompatActivity) ListActivity.this).setSupportActionBar(toolbar);
+            ListActivity.this.setSupportActionBar(toolbar);
 
             if (toolbar != null) {
 
@@ -83,6 +84,27 @@ public class ListActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    /**
+     * @param searchView
+     */
+    private void search(SearchView searchView) {
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                mAdapter.getFilter().filter(newText);
+                return true;
+            }
+        });
     }
 
     @Override

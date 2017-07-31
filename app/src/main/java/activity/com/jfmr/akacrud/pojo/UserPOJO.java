@@ -2,7 +2,6 @@ package activity.com.jfmr.akacrud.pojo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,14 +52,7 @@ public class UserPOJO implements Parcelable{
         String[] dateTime = jsonObject.getString("birthdate").split("T");
         getDt_birthdate().setS_date(dateTime[0]);
         getDt_birthdate().setS_time(dateTime[1]);
-        getDt_birthdate().setS_formattedDate(DateTimePOJO.formatDate(getDt_birthdate()));
 
-        showInLog();
-    }
-
-
-    public void showInLog(){
-        Log.i(getClass().getName(),"id: "+ getI_id() +" "+"s_name: "+ getS_name()+" "+"Birthday: "+ getDt_birthdate().getS_date().concat("-").concat(getDt_birthdate().getS_time()) );
     }
 
 

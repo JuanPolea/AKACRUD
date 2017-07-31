@@ -4,12 +4,11 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -46,15 +45,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 import activity.com.jfmr.akacrud.R;
+import activity.com.jfmr.akacrud.activity.UserProfileActivity;
 import activity.com.jfmr.akacrud.pojo.DateTimePOJO;
 import activity.com.jfmr.akacrud.pojo.UserPOJO;
+
+import static activity.com.jfmr.akacrud.pojo.DateTimePOJO.HYPHEN;
 
 /**
  * Created by Juan Francisco Mateos Redondo
  */
 
 public class UserCreateFragment extends Fragment {
-    private static final String HYPHEN = "-";
+
     private Deque<String> stackTmp;
     private static final String ARG_PARAM1 = "userCreateFragment";
 
@@ -114,14 +116,14 @@ public class UserCreateFragment extends Fragment {
         } else
             rootView = new View[]{inflater.inflate(R.layout.fragment_user_create, container, false)};
 
-        etNombre = (EditText) rootView[0].findViewById(R.id.idEtNameResult);
-        tvDateBirth = (TextView) rootView[0].findViewById(R.id.idTvDateOfBirthResult);
-        tvTimeBirth = (TextView) rootView[0].findViewById(R.id.idTvTimeOfBirthResult);
-        ivDateOfBirth = (ImageView) rootView[0].findViewById(R.id.idIvDateOfBirth);
-        ImageView ivTimeofBirth = (ImageView) rootView[0].findViewById(R.id.idIvTimeOfBirth);
-        ivAccept = (ImageView) rootView[0].findViewById(R.id.ivIvAcept);
+        etNombre = rootView[0].findViewById(R.id.idEtNameResult);
+        tvDateBirth = rootView[0].findViewById(R.id.idTvDateOfBirthResult);
+        tvTimeBirth = rootView[0].findViewById(R.id.idTvTimeOfBirthResult);
+        ivDateOfBirth = rootView[0].findViewById(R.id.idIvDateOfBirth);
+        ImageView ivTimeofBirth = rootView[0].findViewById(R.id.idIvTimeOfBirth);
+        ivAccept = rootView[0].findViewById(R.id.ivIvAcept);
 
-        userModeloPOJO = (UserPOJO)getActivity().getIntent().getParcelableExtra(getString(R.string.fragment_user_create));
+        userModeloPOJO = getActivity().getIntent().getParcelableExtra(getString(R.string.fragment_user_create));
 
         if (userModeloPOJO != null) {
 
@@ -131,6 +133,7 @@ public class UserCreateFragment extends Fragment {
 
 
             getActivity().setTitle(getString(R.string.update_User));
+            bActualizar = true;
         }else
             userModeloPOJO = new UserPOJO();
 
@@ -146,11 +149,16 @@ public class UserCreateFragment extends Fragment {
             public void onDateSet(DatePicker view, int year, int month, int day) {
 
 
+                //Because month array start with 0. January -> 0
+                month++;
 
                 userModeloPOJO.getDt_birthdate().setI_year(year);
                 userModeloPOJO.getDt_birthdate().setI_month(month);
                 userModeloPOJO.getDt_birthdate().setI_day(day);
-                String date = String.valueOf(year).concat(HYPHEN).concat(String.valueOf(month)).concat(HYPHEN).concat(String.valueOf(day));
+
+                String date = DateTimePOJO.insertLeftZero(year).
+                        concat(HYPHEN).concat(DateTimePOJO.insertLeftZero(month)).
+                        concat(HYPHEN).concat(DateTimePOJO.insertLeftZero(day));
 
                 tvDateBirth.setText(date);
             }
@@ -187,14 +195,14 @@ public class UserCreateFragment extends Fragment {
                 dialog.setContentView(R.layout.fragment_time);
                 dialog.setTitle(getString(R.string.insert_time));
 
-                final TextView tvTimeSelected = (TextView) dialog.findViewById(R.id.idTvTimeSelected);
+                final TextView tvTimeSelected = dialog.findViewById(R.id.idTvTimeSelected);
 
-                ImageView ivTimeAccept = (ImageView) dialog.findViewById(R.id.idIvTimeAcept);
-                ImageView ivTimeCancel = (ImageView) dialog.findViewById(R.id.idIvTimeCancel);
+                ImageView ivTimeAccept = dialog.findViewById(R.id.idIvTimeAcept);
+                ImageView ivTimeCancel = dialog.findViewById(R.id.idIvTimeCancel);
 
-                final Spinner spHour = (Spinner) dialog.findViewById(R.id.idSpHour);
-                final Spinner spMinutes = (Spinner) dialog.findViewById(R.id.idSpMinutes);
-                final Spinner spSeconds = (Spinner) dialog.findViewById(R.id.idSpSeconds);
+                final Spinner spHour = dialog.findViewById(R.id.idSpHour);
+                final Spinner spMinutes = dialog.findViewById(R.id.idSpMinutes);
+                final Spinner spSeconds = dialog.findViewById(R.id.idSpSeconds);
 
                 /**
                  * Adapters for spinners
@@ -355,7 +363,7 @@ public class UserCreateFragment extends Fragment {
      * @param userModeloPOJO
      * @throws JSONException
      */
-    private void updateUser(UserPOJO userModeloPOJO) throws JSONException {
+    private void updateUser(final UserPOJO userModeloPOJO) throws JSONException {
 
 
         String url = getString(R.string.url_update_user);
@@ -363,7 +371,7 @@ public class UserCreateFragment extends Fragment {
         JSONObject js = new JSONObject();
         js.put("id", userModeloPOJO.getI_id());
         js.put("name", userModeloPOJO.getS_name());
-        js.put("birthdate", DateTimePOJO.formatDate(userModeloPOJO.getDt_birthdate()));
+        js.put("birthdate", userModeloPOJO.getDt_birthdate().getS_date().concat("T").concat(userModeloPOJO.getDt_birthdate().getS_time()));
 
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(
@@ -376,10 +384,12 @@ public class UserCreateFragment extends Fragment {
                             Toast.makeText(getActivity(), getString(R.string.user_not_updated), Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(getActivity(), getString(R.string.user_updated), Toast.LENGTH_SHORT).show();
-                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                            fragmentManager.popBackStack();
-                            fragmentTransaction.commit();
+
+                            Intent intent = new Intent(getActivity(), UserProfileActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                            intent.putExtra(getString(R.string.userPOJO), userModeloPOJO);
+                            getActivity().finish();
+                            startActivity(intent);
                         }
 
 
@@ -413,17 +423,18 @@ public class UserCreateFragment extends Fragment {
 
 
     /**
-     * @param usermodel
+     * @param userPOJO
      * @throws JSONException
      */
-    private void createUser(final UserPOJO usermodel) throws JSONException {
+    private void createUser(final UserPOJO userPOJO) throws JSONException {
 
 
         String url = getString(R.string.url_create_user);
 
         JSONObject js = new JSONObject();
-        js.put("name", usermodel.getS_name());
-        js.put("birthdate", DateTimePOJO.formatDate(usermodel.getDt_birthdate()));
+        js.put("id", userPOJO.getI_id());
+        js.put("name", userPOJO.getS_name());
+        js.put("birthdate", DateTimePOJO.formatDate(userPOJO.getDt_birthdate()));
 
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(
@@ -436,7 +447,6 @@ public class UserCreateFragment extends Fragment {
                             Toast.makeText(getActivity(), getString(R.string.user_not_created), Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(getActivity(), getString(R.string.user_created), Toast.LENGTH_SHORT).show();
-
                             getActivity().finish();
                         }
 
