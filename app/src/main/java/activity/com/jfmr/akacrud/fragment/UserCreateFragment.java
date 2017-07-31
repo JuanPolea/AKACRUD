@@ -106,6 +106,7 @@ public class UserCreateFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         setHasOptionsMenu(false);
+
         final View[] rootView;
         if (getArguments() != null) {
             rootView = new View[]{inflater.inflate(R.layout.fragment_user_create_content, container, false)};
@@ -122,13 +123,13 @@ public class UserCreateFragment extends Fragment {
 
         userModeloPOJO = (UserPOJO)getActivity().getIntent().getParcelableExtra(getString(R.string.fragment_user_create));
 
-        if (!userModeloPOJO.getS_name().isEmpty()) {
+        if (userModeloPOJO != null) {
 
                 getEtNombre().setText(userModeloPOJO.getS_name());
                 getTvDateBirth().setText(userModeloPOJO.getDt_birthdate().getS_date());
                 getTvTimeBirth().setText(userModeloPOJO.getDt_birthdate().getS_time());
 
-                setHasOptionsMenu(true);
+
             getActivity().setTitle(getString(R.string.update_User));
         }else
             userModeloPOJO = new UserPOJO();
