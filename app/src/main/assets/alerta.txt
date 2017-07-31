@@ -1,0 +1,3 @@
+TituloAlerta|Tituloevento|categoria|Clasificación|tipo|ciudad|localidad|Nombre de la sala|fecha|Hora|Repetir|Artista
+Cine|vacio|Audiovisual|Cortos|Bar|Sevilla|Sevilla|Nombre de la sala|2016-10-17|17:00|Artistazo| ->Alerta Audiovisual-Cortos 1
+Arte|vacio|Deporte|Fútbol|Otro|Cádiz|Ubrique|Nombre de la sala|2016-10-17|17:00|Artistazo| ->Alerta Arte-Mercadillo 2

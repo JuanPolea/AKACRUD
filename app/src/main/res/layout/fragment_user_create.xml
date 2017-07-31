@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_user_create"
+    tools:context="activity.com.jfmr.akacrud.fragment.UserCreateFragment"
+
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_user_create"
+    android:background="@color/background"
+    >
+
+    <ImageView
+
+        android:id="@+id/idIvCreateUserImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_standar"
+        android:background="@drawable/ic_user"
+        android:layout_gravity="center"/>
+
+
+    <include layout="@layout/fragment_user_create_content"
+        />
+
+</LinearLayout>
+
+

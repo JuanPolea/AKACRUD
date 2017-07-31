@@ -1,0 +1,2 @@
+idAlerta|idUsuario|idSesion|TituloAlerta|Tituloevento|categoria|Clasificación|tipo|ciudad|localidad|Nombre de la sala|fecha|Hora|Artista|diaSeleccionado
+1|1|1|Musica|vacio|Música|Concierto|Sala|Cádiz|Ubrique|Nombre de la sala|2016-10-17|17:00|Artistazo|10|1| -> 1 Inicializar una alerta para el test unitario

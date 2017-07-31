@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="activity.com.jfmr.akacrud.activity.UserProfileActivity">
+    <item
+        android:id="@+id/miUserUndo"
+        android:orderInCategory="100"
+        android:title="@string/user_update"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_undo"/>
+    <item
+        android:id="@+id/miUserRedo"
+        android:orderInCategory="200"
+        android:title="@string/user_delete"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_redo"/>
+</menu>

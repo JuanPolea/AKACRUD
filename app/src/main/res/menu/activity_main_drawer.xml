@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/idImCreateUser"
+            android:icon="@drawable/ic_create_user"
+            android:title="@string/create_user" />
+        <item
+            android:id="@+id/idImSearchUser"
+            android:icon="@drawable/ic_search_user"
+            android:title="@string/search_user" />
+        <item
+            android:id="@+id/idImSelecAllUser"
+            android:icon="@drawable/ic_select_all_users"
+            android:title="@string/select_all_user" />
+
+    </group>
+
+</menu>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/width_dialog"
+    android:layout_height="@dimen/height_dialog"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_centerInParent="true"
+    android:id="@+id/fragment_time"
+    android:layout_gravity="center_horizontal"
+    >
+
+
+    <TextView
+        android:id="@+id/idTvTituloHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hour_title"
+        android:layout_alignBottom="@+id/idSpHour"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/margin_standar"
+        android:layout_marginStart="@dimen/margin_standar"
+        style="@style/Title"/>
+
+    <Spinner
+        android:id="@+id/idSpHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/idIvTimeAcept"
+        android:layout_toStartOf="@+id/idIvTimeAcept" />
+
+    <TextView
+        android:id="@+id/idTvTituloMinutos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minutes_title"
+        style="@style/Title"
+        android:layout_alignTop="@+id/idSpMinutes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/margin_standar"
+        android:layout_marginStart="@dimen/margin_standar"/>
+    <Spinner
+        android:id="@+id/idSpMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idSpHour"
+        android:layout_marginRight="@dimen/margin_standar"
+        android:layout_marginEnd="@dimen/margin_standar"
+        android:layout_marginTop="@dimen/margin_standar"
+        android:layout_marginBottom="@dimen/margin_standar"
+        android:layout_alignLeft="@+id/idSpHour"
+        android:layout_alignStart="@+id/idSpHour" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/segundos_title"
+        android:layout_marginLeft="@dimen/margin_standar"
+        android:layout_marginStart="@dimen/margin_standar"
+        style="@style/Title"
+        android:layout_alignTop="@+id/idSpSeconds"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Spinner
+        android:id="@+id/idSpSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idSpMinutes"
+        android:layout_marginRight="@dimen/margin_standar"
+        android:layout_marginEnd="@dimen/margin_standar"
+        android:layout_marginTop="@dimen/margin_standar"
+        android:layout_marginBottom="@dimen/margin_standar"
+        android:layout_alignLeft="@+id/idSpMinutes"
+        android:layout_alignStart="@+id/idSpMinutes" />
+
+    <TextView
+        android:id="@+id/idTvTimeSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Title"
+        android:layout_marginLeft="@dimen/margin_standar"
+        android:layout_marginStart="@dimen/margin_standar"
+        android:gravity="center"
+        android:layout_below="@+id/idSpSeconds"
+        android:layout_margin="@dimen/margin_standar"/>
+
+
+    <ImageView
+        android:id="@+id/idIvTimeAcept"
+        android:layout_width="@dimen/size_accept_icon"
+        android:layout_height="@dimen/size_accept_icon"
+        android:src="@drawable/ic_accept"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/idIvTimeCancel"
+        android:layout_width="@dimen/size_accept_icon"
+        android:layout_height="@dimen/size_accept_icon"
+        android:src="@drawable/ic_cancel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp" />
+</RelativeLayout>

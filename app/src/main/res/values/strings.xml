@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">AKACRUD</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Opciones</string>
+    <string name="url_getall">http://hello-world.innocv.com/api/user/getall</string>
+    <string name="welcome">Bienvenido a AKA CRUD APP</string>
+    <string name="size_margin_column" format="float" type="dimen">.25</string>
+    <string name="create_user">Crear usuario</string>
+    <string name="search_user">Buscar usuario</string>
+    <string name="update_User">Actualizar usuario</string>
+    <string name="delete_user">Eliminar Usuario</string>
+    <string name="insert_id">Indique el i_id a buscar</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="empty_field">El campo no puede estar vacío</string>
+    <string name="url_search_user">http://hello-world.innocv.com/api/user/get/%1$d</string>
+    <string name="i_id">i_id</string>
+    <string name="insert_name">Indique su nombre</string>
+    <string name="insert_date_birth">Inserte una fecha</string>
+    <string name="url_create_user">http://hello-world.innocv.com/api/user/create</string>
+    <string name="user_not_found">No se ha encontrado al usuario indicado</string>
+
+    <string name="Id_title">Id:</string>
+    <string name="name_title">Nombre:</string>
+    <string name="date_of_birth_title">Fecha de nacimiento:</string>
+    <string name="hour_birth_title">Hora de nacimiento:</string>
+    <string name="user_profile_image">Foto del usuario</string>
+    <string name="title_activity_user_profile">Perfil de usuario</string>
+
+    <string name="userPOJO">userPOJO</string>
+    <string name="user_update">Actualizar</string>
+    <string name="user_delete">Eliminar</string>
+    <string name="fragment_user_create">fragment_user_create</string>
+    <string name="time_set">time_set</string>
+    <string name="insert_time">Seleccione la hora:</string>
+    <string name="hour_title">Hora:</string>
+    <string name="minutes_title">Minutos:</string>
+    <string name="segundos_title">Segundos:</string>
+    <string name="empty_date_field">Debe introducir un valor para la fecha</string>
+    <string name="empty_time_field">El campo hora no puede estar vacío</string>
+    <string name="error_connection">Error de conexión</string>
+    <string name="user_not_created">Usuario no creado</string>
+    <string name="user_created">Usuario creado</string>
+    <string name="image_create_user">Imagen para crear un usuario</string>
+    <string name="fragment_user_profile">fragment_user_profile</string>
+    <string name="url_update_user">http://hello-world.innocv.com/api/user/update</string>
+    <string name="delete_user_text">¿Eliminar usuario?</string>
+    <string name="url_delete_user">http://hello-world.innocv.com/api/user/remove/%1$d</string>
+    <string name="select_all">Todos</string>
+    <string name="fragment_list">fragment_list</string>
+    <string name="title_activity_list">List</string>
+    <string name="filter_by">Seleccione el orden</string>
+    <string name="user_not_updated">Usuario no actualizado. Pruebe de nuevo</string>
+    <string name="user_updated">Usuario actualizado</string>
+    <string name="select_all_user">Seleccionar todos</string>
+    <string name="campo_nombre_vacio">Debe introducir un nombre</string>
+    <string name="exit">Salir</string>
+    <string name="email">jfmateosredondo@gmail.com</string>
+    <string name="exit_app">¿Salir de la aplicación?</string>
+    <string name="ascendent">Ascendente</string>
+    <string name="descendent">Descendente</string>
+    <string name="idB_accept_filter">idBAcceptFilter</string>
+    <string name="id_uppercase">Id</string>
+    <string name="name_uppercase">Nombre</string>
+    <string name="date_upp">Fecha</string>
+    <string name="filter_options_fragment">filterOptionsFragment</string>
+    <string name="filter_by_id_asc">Id ascendente</string>
+    <string name="filter_by_id_desc">Id descendente</string>
+    <string name="filter_by_date_asc">Fecha ascendente</string>
+    <string name="filter_by_date_desc">Fecha descendente</string>
+    <string name="nothing_undo">No hay nada para deshacer</string>
+    <string name="nothing_redo">No se puede rehacer el texto</string>
+    <string name="numeric_format">Debe insertar un número</string>
+    <string name="id_empty">Debe insertar un i_id</string>
+    <string name="main_menu">Menú principal</string>
+    <string name="title_activity_user_create">Crear usuario</string>
+    <string name="null_value">null</string>
+    <string name="error_getAll">No se han recibido datos, pruebe de nuevo</string>
+</resources>

@@ -1,0 +1,3 @@
+i_id|s_name|date|time|dateTime|
+653|Enrique|1978-06-08|04:00:00|-->User exist
+1|Enrique|1978-06-08|04:00:00|-->User not exist

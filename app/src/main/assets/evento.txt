@@ -1,0 +1,14 @@
+nombre|lugar|categoria|clasificacion|tipo|ciudad|localidad|via|direccion|numero|cp|artista|precio|s_descripcion
+Eventual|Bar Paco|Audiovisual|Serie|Bar|Sevilla|Sevilla|Calle|Feria|1|41003|Santana|10|Conciertazo del chipi de la isla 1
+Cine independiente|Sala de Actos del Bar Manuela|Audiovisual|Serie|Bar|Cádiz|Ubrique|Calle|Segura|2|11600|Vladimir|0|Proyección de la Saga dirigida por Vladimir 2
+Eventual|Bar Paco|Música|Serie|Bar|Cádiz|Ubrique|Calle|Feria|1|41003|Santana|5|Conciertazo del chipi de la isla|  --> Buscar Evento 3
+Concierto|Bar Manuela|Música|Concierto|Bar|Cádiz|Ubrique|Calle|Gamo|1|11600|Miguel|0|Conciertazo del chipi de la isla| --> Crear Evento de Música 4
+Eventual_Modificado|Bar Paco_Modificado|Arte|Taller|Bar|Sevilla|Sevilla|Calle|Feria|1|41003|Santana|10|Conciertazo del chipi de la isla 5
+Eventual|Bar Paco|Audiovisual|Serie|Bar|Sevilla|Sevilla|Calle|Feria|1|41003|EmpresaPrueba1|10|Conciertazo del chipi de la isla 6
+Expo|Convento Capuchinos|Arte|Mercadillo|Teatro|Cádiz|Ubrique|Calle|Segura|3|11600|Pepovich|5|Pepe expone sus obras.|  -->Evento de Arte, Mercadillo 7
+CXM Alpandeire|Plaza del Ayuntamiento|Deporte|Carrera|Otro|Cádiz|Ubrique|Calle|Flores|3|11600|Muchos|50|Carrera de 135 kms por varios pueblos|  -->Evento de Deporte, carrera 8
+CXM Nutrias|Plaza del Ayuntamiento|Deporte|Carrera|Otro|Cádiz|Ubrique|Calle|Nardo|3|11600|Nadie|20|Carrera de 50 kms por varios pueblos|  --> Evento de Deporte, carrera 9
+La empresa existee|PruebaEmpresaM|Social|Asamblea|Bar|Cádiz|Ubrique|Calle|Ebro|23|11600|Artista de Cine|20|Carrera de 50 kms por varios pueblos|  --> Evento Empresa existe en el sistema 10
+La empresa existe|Mi casa|Deporte|Carrera|Otro|Cádiz|Ubrique|Calle|Ebro|33|11600|PruebaEmpresaM|10|Carrera de 50 kms por varios pueblos|  --> Evento Empresa existe en el sistema 11
+ArtistaExiste|Bar Tolo|Deporte|Carrera|Bar|Cádiz|Ubrique|Calle|Segura|42|11600|PruebaArtista|2|Prueba crear evento con artista existente en el sistema ->> Evento artista existe en el sistema 12
+ArtistaNoExiste|Bar Toleo|Audiovisual|Cortos|Bar|Cádiz|Ubrique|Calle|Toledo|42|11600|TomaKetama|2|Prueba para modificar evento| ->> evento para modificar 13

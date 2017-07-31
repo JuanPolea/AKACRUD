@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="activity.com.jfmr.akacrud.activity.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintVertical_bias="0.032"
+        android:id="@+id/textView2"
+        style="@style/Title"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:layout_marginTop="@dimen/margin_top_gridlayout"
+        android:layout_centerHorizontal="true"
+        >
+
+
+        <ImageView
+            android:id="@+id/bCreateUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/btn_user_create"
+            android:contentDescription="@string/create_user"
+            android:layout_marginStart="@dimen/margin_left_gridlayout"
+            android:layout_marginLeft="@dimen/margin_left_gridlayout"/>
+
+        <ImageView
+            android:id="@+id/bSelectAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="75dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@drawable/btn_user_select_all"
+            android:contentDescription="@string/search_user"
+            android:layout_marginRight="@dimen/margin_right_gridlayout"
+            android:layout_marginEnd="@dimen/margin_right_gridlayout"
+            android:layout_marginStart="@dimen/margin_left_gridlayout"
+            android:layout_marginLeft="@dimen/margin_left_gridlayout"/>
+
+        <ImageView
+            android:id="@+id/bSearchUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:background="@drawable/btn_user_search"
+            android:contentDescription="@string/search_user"
+            android:layout_marginRight="@dimen/margin_left_gridlayout"
+            android:layout_marginEnd="@dimen/margin_left_gridlayout"
+            />
+    </GridLayout>
+
+
+</RelativeLayout>

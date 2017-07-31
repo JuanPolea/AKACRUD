@@ -1,0 +1,28 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="margin_standar">10dp</dimen>
+    <dimen name="size_list">12sp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="width_fragment_create_user">200dp</dimen>
+    <dimen name="height_fragment_create_user">200dp</dimen>
+    <dimen name="width_dialog">180dp</dimen>
+    <dimen name="width_dialog_filter">180dp</dimen>
+    <dimen name="height_dialog">200dp</dimen>
+    <dimen name="item_list">10dp</dimen>
+    <dimen name="size_text">15sp</dimen>
+    <dimen name="size_title">20sp</dimen>
+    <dimen name="size_item_list">10sp</dimen>
+    <dimen name="margin_right_gridlayout">70dp</dimen>
+    <dimen name="margin_top_gridlayout">95dp</dimen>
+    <dimen name="margin_left_gridlayout">40dp</dimen>
+    <dimen name="cornerRadious">10dp</dimen>
+    <dimen name="cardview_elevation">4dp</dimen>
+    <dimen name="margin_search_View">100dp</dimen>
+    <dimen name="size_accept_icon">30dp</dimen>
+</resources>
